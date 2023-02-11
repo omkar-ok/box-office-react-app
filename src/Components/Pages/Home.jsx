@@ -59,7 +59,7 @@ const Home = () => {
     <MainPageLayout
       children={
         <>
-          <form onSubmit={onSearch}>
+          <form onSubmit={onSearch} method='post' >
             <input
               id="input"
               type="text"

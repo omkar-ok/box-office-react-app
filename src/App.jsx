@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from 'react-query'
-import About from "./Components/Pages/About";
+import Starred from "./Components/Pages/Starred";
 import Home from "./Components/Pages/Home";
 import Show from "./Components/Pages/Show";
 import Header from './Components/Common/Header'
@@ -19,7 +19,7 @@ function App() {
             {" "}
           </Route>
 
-          <Route exact path="/about" element={<About />}>
+          <Route exact path="/starred" element={<Starred />}>
             {" "}
           </Route>
 

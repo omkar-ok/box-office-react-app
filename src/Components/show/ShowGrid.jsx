@@ -10,7 +10,7 @@ const ShowGrid = ({ data }) => {
   const [staredShows, dispatchStarred ] = useStarredShows();
   
 
-  console.log(staredShows);
+  
 
   const onStarMeClicked = (showId) => {
     const isStarred = staredShows.includes(showId);
