@@ -6,9 +6,10 @@ import { useQuery } from 'react-query'
 // import apiGet from "../misc/config";
 import { searchForShows, searchForActors } from "../../api/tvmaze.js"
 import ShowGrid from "../show/ShowGrid";
+import { useSerchedName } from "../lib/useSearchedName";
 
 const Home = () => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useSerchedName();
   const [searchOption, setSearchOption] = useState('shows');
   const [filter, setFilter] = useState(null);
 
