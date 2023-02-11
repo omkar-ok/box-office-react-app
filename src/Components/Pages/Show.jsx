@@ -29,8 +29,8 @@ function Show() {
 
   return (
     <div>this is show page <br />
-      {showData.name}
-      <img src={showData.image.medium} alt="images" />
+      {/* {showData.name}
+      <img src={showData.image.medium} alt="images" /> */}
       <ShowMainData
         image={showData.image}
         name={showData.name}

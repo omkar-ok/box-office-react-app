@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Title from "./Sub/Title";
 
 export default function Header(props) {
   return (
@@ -32,9 +31,7 @@ export default function Header(props) {
         </div>
       </nav>
 
-      <nav className="container">
-        <Title title={"Box Office"} subtitle={"Are you looking for a movie or an actor?"} />
-      </nav>
+     
     </div>
   );
 }

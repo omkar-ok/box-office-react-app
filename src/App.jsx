@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import About from "./Components/Pages/About";
 import Home from "./Components/Pages/Home";
 import Show from "./Components/Pages/Show";
+import Header from './Components/Common/Header'
+
 
 const queryClient = new QueryClient()
 
@@ -11,6 +13,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
+        <Header title={"Box Office"} />
         <Routes>
           <Route exact path="/" element={<Home />}>
             {" "}
