@@ -9,6 +9,7 @@ import { searchForShows, searchForActors } from "../../api/tvmaze.js"
 import ShowGrid from "../show/ShowGrid";
 import { useSerchedName } from "../lib/useSearchedName";
 import CustomRadio from "../CustomRadio";
+import { TextCenter } from "../Common/TextCenter";
 
 const Home = () => {
   const [input, setInput] = useSerchedName();
@@ -29,13 +30,13 @@ const Home = () => {
 
   const renderResults = () => {
     if(error){
-      return <div>error occured: {error} </div>
+      return <TextCenter>error occured: {error} </TextCenter>
     }
     if(input === ""){
-      return <div></div>
+      return <TextCenter></TextCenter>
     }
     if (results && results.length === 0) {
-      return <div>NO Results for search " {input} " </div>;
+      return <TextCenter>NO Results for search " {input} " </TextCenter>;
     }
     if (results && results.length > 0) {
       return (results[0].show ?
@@ -63,7 +64,7 @@ const Home = () => {
       children={
         <>
           <form onSubmit={onSearch} method='post' >
-            <input
+            <SearchInput
               id="input"
               type="text"
               onChange={onInputChange}
@@ -71,15 +72,17 @@ const Home = () => {
               value={input}
               onKeyDown={onKeyDown}
             />
+
+            <RadiosWrapper className="d-flex">
+              <CustomRadio label="Shows" name="search-radio" id="shows-radio" value="shows" checked={searchOption === 'shows'} onChange={onRadioChange} />
+              <CustomRadio label="Actors" name="search-radio" id="actors-radio" value="people" checked={searchOption === 'people'} onChange={onRadioChange} />
+            </RadiosWrapper>
+            <SearchButtonWrapper>
             <button type="submit" >
               {" "}
               Search{" "}
             </button>
-
-            <div className="d-flex">
-              <CustomRadio label="Shows" name="search-radio" id="shows-radio" value="shows" checked={searchOption === 'shows'} onChange={onRadioChange} />
-              <CustomRadio label="Actors" name="search-radio" id="actors-radio" value="people" checked={searchOption === 'people'} onChange={onRadioChange} />
-            </div>
+            </SearchButtonWrapper>
 
             {renderResults()}
             </form>
@@ -90,3 +93,48 @@ const Home = () => {
 };
 
 export default Home;
+
+const SearchInput = styled.input`
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  width: 200px;
+  margin: auto;
+  outline: none;
+  padding: 13px 15px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0px 0px 10px 0px rgba(219, 219, 219, 0.5);
+  font-size: 14px;
+  border-radius: 12px;
+  color: #8d8d8d;
+  &::placeholder {
+    font-weight: 300;
+    color: #8d8d8d;
+  }
+`;
+
+export const RadiosWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  label {
+    margin: 0 15px;
+  }
+`;
+
+const SearchButtonWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 35px;
+  button {
+    color: #fff;
+    background-color: ${({ theme }) => theme.mainColors.blue};
+    margin: auto;
+    padding: 10px 50px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;

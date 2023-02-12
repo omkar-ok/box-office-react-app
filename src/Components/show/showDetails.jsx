@@ -1,15 +1,22 @@
 import React from 'react'
+import styled from 'styled-components';
 
 function showDetails(props) {
     const {status, premiered, network} = props;
   return (
-    <div>
+    <DetailsWrapper>
         <p>Status: {status} </p>
         <p>Premiered: {premiered} {!!network && `on ${network.name}`} </p>
 
 
-    </div>
+    </DetailsWrapper>
   )
 }
 
 export default showDetails
+
+const DetailsWrapper = styled.div`
+  p {
+    margin: 5px 0;
+  }
+`;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { SearchCard } from '../styled'
+import { SearchCard } from '../Common/SearchCard'
 
 export const StyledShowCard = styled(SearchCard)`
 .btns {

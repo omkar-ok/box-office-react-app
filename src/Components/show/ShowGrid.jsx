@@ -1,7 +1,8 @@
 import React from "react";
 import ShowCards from "./ShowCards";
-import { FlexGrid } from "../styled";
+// import { FlexGrid } from "../styled";
 import {useStarredShows} from "../lib/useStarredShows"
+import { FlexGrid } from "../Common/FlexGrid";
 
 import IMAGE_NOT_FOUND from "../../img/image_not_found.jpg";
 

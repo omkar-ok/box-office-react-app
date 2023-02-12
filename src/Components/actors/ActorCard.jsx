@@ -1,12 +1,13 @@
 import React from 'react'
 import { StyledActorCard } from './ActorCardStyled';
+import { SearchImgWrapper } from '../Common/SearchCard';
 
 const ActorCard = ({ image, name, gender, country, birthday, deathday }) => {
   return (
     <StyledActorCard>
-      <div className='img-wrapper'>
+      <SearchImgWrapper className='img-wrapper'>
         <img src={image} alt="actor" />
-      </div>
+      </SearchImgWrapper>
       <h1>
         {name} {gender ? `(${gender})` : null}
       </h1>
