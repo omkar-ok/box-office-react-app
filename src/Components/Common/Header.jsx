@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export default function Header(props) {
   return (
@@ -14,13 +15,13 @@ export default function Header(props) {
             <Link className="navbar-brand" to="/"> {props.title} </Link>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/"> Home </Link>
+                <NavLinkStyled className="nav-link" aria-current="page" to="/"> Home </NavLinkStyled>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/starred"> Starred </Link>
+                <NavLinkStyled className="nav-link" to="/starred"> Starred </NavLinkStyled>
               </li>
               <li className="nav-item">
-                <Link className="nav-link disabled" to="#" tabIndex="-1" aria-disabled="true" > Disabled </Link>
+                <NavLinkStyled className="nav-link disabled" to="/about" tabIndex="-1" aria-disabled="true" > Disabled </NavLinkStyled>
               </li>
             </ul>
             <form className="d-flex">
@@ -34,4 +35,36 @@ export default function Header(props) {
      
     </div>
   );
+
 }
+
+const NavLinkStyled = styled(NavLink)`
+  display: block;
+  padding: 3px 15px;
+  position: relative;
+  text-decoration: none;
+  color: ${({ theme }) => theme.mainColors.gray} ;
+  &.active {
+    color: ${({ theme }) => theme.mainColors.blue} !important;
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 2px;
+      left: 0%;
+      bottom: 0;
+      background-color: ${({ theme }) => theme.mainColors.blue} ;
+      animation: slide-in 0.3s ease-in forwards;
+      @keyframes slide-in {
+        from {
+          left: 50%;
+          width: 0;
+        }
+        to {
+          left: 0%;
+          width: 100%;
+        }
+      }
+    }
+  }
+`;

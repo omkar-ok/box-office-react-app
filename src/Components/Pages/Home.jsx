@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import ActorGrid from "../actors/ActorGrid";
 import MainPageLayout from "../Common/MainPageLayout";
 import { useQuery } from 'react-query'
+import styled from "styled-components";
 
 // import apiGet from "../misc/config";
 import { searchForShows, searchForActors } from "../../api/tvmaze.js"
 import ShowGrid from "../show/ShowGrid";
 import { useSerchedName } from "../lib/useSearchedName";
+import CustomRadio from "../CustomRadio";
 
 const Home = () => {
   const [input, setInput] = useSerchedName();
@@ -74,13 +76,9 @@ const Home = () => {
               Search{" "}
             </button>
 
-            <div>
-              <label htmlFor="shows-radio">
-                <input type="radio" name="search-radio" id="shows-radio" value="shows" defaultChecked onChange={onRadioChange} /> Shows
-              </label>
-              <label htmlFor="actors-radio">
-                <input type="radio" name="search-radio" id="actors-radio" value="people" onChange={onRadioChange} /> Actors
-              </label>
+            <div className="d-flex">
+              <CustomRadio label="Shows" name="search-radio" id="shows-radio" value="shows" checked={searchOption === 'shows'} onChange={onRadioChange} />
+              <CustomRadio label="Actors" name="search-radio" id="actors-radio" value="people" checked={searchOption === 'people'} onChange={onRadioChange} />
             </div>
 
             {renderResults()}

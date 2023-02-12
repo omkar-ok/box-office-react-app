@@ -30,7 +30,7 @@ const Starred = () => {
 
   return (
     <div>
-      <h2>This is About h2</h2>
+      <h2>This is starred h2</h2>
       <p>Starred {staredShowsIds.length} </p>
     </div>
   )
