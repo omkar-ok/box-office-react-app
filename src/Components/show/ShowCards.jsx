@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import {Link} from 'react-router-dom'
-import { StyledShowCard } from './ShowCardStyled';
 import styled from 'styled-components';
 import {SearchImgWrapper, SearchCard} from '../Common/SearchCard'
 import { StarIcon } from '../Common/StarIcon';
