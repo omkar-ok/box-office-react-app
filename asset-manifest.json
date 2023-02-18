@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/box-office-react-app/static/css/main.31d6cfe0.css",
-    "main.js": "/box-office-react-app/static/js/main.39ff125b.js",
+    "main.js": "/box-office-react-app/static/js/main.4ecded16.js",
     "static/js/787.6e354c4d.chunk.js": "/box-office-react-app/static/js/787.6e354c4d.chunk.js",
     "static/media/image_not_found.jpg": "/box-office-react-app/static/media/image_not_found.41a9664d5c0c0f228062.jpg",
     "index.html": "/box-office-react-app/index.html",
-    "main.39ff125b.js.map": "/box-office-react-app/static/js/main.39ff125b.js.map",
+    "main.4ecded16.js.map": "/box-office-react-app/static/js/main.4ecded16.js.map",
     "787.6e354c4d.chunk.js.map": "/box-office-react-app/static/js/787.6e354c4d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.39ff125b.js"
+    "static/js/main.4ecded16.js"
   ]
 }
