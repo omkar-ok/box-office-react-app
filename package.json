@@ -2,7 +2,7 @@
   "name": "box-office",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://omkar-ok.github.io/box-office-app",
+  "homepage": "https://omkar-ok.github.io/box-office-react-app",
   "dependencies": {
     "@tanstack/react-query": "^4.24.4",
     "@testing-library/jest-dom": "^5.16.5",
